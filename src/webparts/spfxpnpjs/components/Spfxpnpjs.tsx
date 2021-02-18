@@ -58,6 +58,7 @@ export default class Spfxpnpjs extends React.Component<ISpfxpnpjsProps, ISpfxpnp
       ProductID: "",
       ProductName: "",
       ProductUnitPrice: "",
+      ProductType: "",
       NoofUnits:"",
       UnitPrice: "",
       SaleValue: "",
@@ -355,8 +356,9 @@ export default class Spfxpnpjs extends React.Component<ISpfxpnpjsProps, ISpfxpnp
         <div className={ styles.container }>
           <div className={ styles.row }>
             <div className={ styles.column }>
-              <span className={ styles.title }>GET YOU CAR!!</span>
-              
+              <span className={ styles.title }>Book Your Car Now!!</span>
+              <br></br>
+              <span className={ styles.subTitle }>Limited Stocks</span>
             </div>
           </div>
           <hr/>
@@ -368,12 +370,12 @@ export default class Spfxpnpjs extends React.Component<ISpfxpnpjsProps, ISpfxpnp
               linkFormat={PivotLinkFormat.tabs}
               onLinkClick={this.controlTabButton}
             >
-              <PivotItem headerText="ADD" itemKey="1" itemIcon="AddTo">
+              <PivotItem headerText="ADD" itemKey="1">
                 <Label>To add Orders Fill the form below.</Label>
                 <div className={styles.emptyheight}></div>
               </PivotItem>
               <br/>
-              <PivotItem headerText="UPDATE" itemKey="2" itemIcon="Handwriting">
+              <PivotItem headerText="EDIT" itemKey="2">
                 <Label>Select Order Id below.</Label>
                 <Dropdown
                   required
@@ -384,7 +386,7 @@ export default class Spfxpnpjs extends React.Component<ISpfxpnpjsProps, ISpfxpnp
                 ></Dropdown>
               </PivotItem>
               <br/>
-              <PivotItem headerText="DELETE" itemKey="3" itemIcon="Delete">
+              <PivotItem headerText="DELETE" itemKey="3">
                 <Label>Select Order Id below.</Label>
                 <Dropdown
                   required
@@ -444,12 +446,12 @@ export default class Spfxpnpjs extends React.Component<ISpfxpnpjsProps, ISpfxpnp
                 />*/}
               </Stack>
               <Stack tokens={SmallVertStack}>
-                {/*<TextField
+              <TextField
                   label="Product Type"
-                  disabled
+                  //disabled
                   placeholder={this.state.ProductType}
                 />
-                <TextField
+                {/*<TextField
                   label="Product Expiry Date"
                   disabled
                   placeholder={
@@ -470,7 +472,7 @@ export default class Spfxpnpjs extends React.Component<ISpfxpnpjsProps, ISpfxpnp
               <Label>Total Sales Price</Label>
               <TextField
                 ariaLabel="disabled Product Sales Price"
-                //readOnly
+                readOnly
                 prefix="Rs. "
                 placeholder={this.state.SaleValue}
               />
